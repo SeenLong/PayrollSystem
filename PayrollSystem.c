@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 // function declaration
-int MainFunctionTable();
+char MainFunctionTable();
 void SearchWorker();
 void ManageWorker();
 void MonthlyInsuranceCostTable();
@@ -12,14 +12,15 @@ void IncomeTaxRateTable();
 void Validation();
 void main();
 
-int MainFunctionTable() // print main function table
+char MainFunctionTable() // print main function table
 {
-    int selection;
+    char selection;
     // draft table
     printf("1 - search worker by name/id\n2 - manage workers\n"
-           "3 - monthly insurance cost tabel\n4 - income tax rate table\n");
-    printf("Please enter number: ");
-    scanf("%d", &selection);
+           "3 - monthly insurance cost tabel\n4 - income tax rate table\n"
+           "Q - Exit program\n");
+    printf("Please enter character: ");
+    scanf("%c", &selection);
     return selection;
 }
 
@@ -75,25 +76,29 @@ void main() // main function
 {
     system("cls");
     fflush(stdin);
-    int selection;
+    char selection;
 
     selection = MainFunctionTable();
     switch (selection)
     {
-    case 1:
+    case '1':
         SearchWorker();
         break;
 
-    case 2:
+    case '2':
         ManageWorker();
         break;
 
-    case 3:
+    case '3':
         MonthlyInsuranceCostTable();
         break;
 
-    case 4:
+    case '4':
         IncomeTaxRateTable();
+        break;
+    case 'q':
+    case 'Q':
+        exit(0);
         break;
 
     default:
