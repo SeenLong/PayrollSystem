@@ -45,6 +45,7 @@ void MonthlyInsuranceCostTable() // show monthly insurance cost table
            "--------------------------------------\n"
            "| Over 65   |   RM250                |\n"
            "--------------------------------------\n");
+    printf("\nHi Gua Gua");
     printf("\nPlease press any key to back to the main menu.");
     getchar();
     main();
